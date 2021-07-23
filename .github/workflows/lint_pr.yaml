@@ -14,6 +14,20 @@ jobs:
       # Please look up the latest version from
       # https://github.com/amannn/action-semantic-pull-request/releases
       - name: semantic-pull-request
-        uses: amannn/action-semantic-pull-request@v3.4.0
+        uses: amannn/action-semantic-pull-request@v3.4.0        
+        with:
+          # Configure which types are allowed.
+          # Default: https://github.com/commitizen/conventional-commit-types
+          types: |
+            fix
+            feat
+          # Configure which scopes are allowed.
+          scopes: |
+            task
+            billing         
+            permission
+            new               
+          # Configure that a scope must always be provided.
+          requireScope: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
